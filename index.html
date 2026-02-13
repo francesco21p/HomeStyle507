@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Style 507 | Catálogo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <h1>HOME STYLE <span>507</span></h1>
+</header>
+
+<div class="search-box">
+  <input id="search" placeholder="Buscar productos..." oninput="filtrar()">
+</div>
+
+<nav id="catNav">
+  <button class="active" onclick="filtrarCategoria('Todos',this)">Todos</button>
+  <button onclick="filtrarCategoria('Forros',this)">Forros</button>
+  <button onclick="filtrarCategoria('Sábanas',this)">Sábanas</button>
+  <button onclick="filtrarCategoria('Alfombras',this)">Alfombras</button>
+  <button onclick="filtrarCategoria('Electrónicos',this)">Electrónicos</button>
+  <button onclick="filtrarCategoria('Almohadas',this)">Almohadas</button>
+  <button onclick="filtrarCategoria('Perfumes',this)">Perfumes</button>
+  <button onclick="filtrarCategoria('Frazadas',this)">Frazadas</button>
+  <button onclick="filtrarCategoria('Toallas',this)">Toallas</button>
+  <button onclick="filtrarCategoria('Mochilas',this)">Mochilas</button>
+  <button onclick="filtrarCategoria('Carteras',this)">Carteras</button>
+  <button onclick="filtrarCategoria('Baño',this)">Baño</button>
+  <button onclick="filtrarCategoria('Cortinas',this)">Cortinas</button>
+  <button onclick="filtrarCategoria('Accesorios',this)">Accesorios</button>
+  <button onclick="filtrarCategoria('Otros',this)">Otros</button>
+</nav>
+
+<main id="catalogo">
+
+<!-- ================= FORROS ================= -->
+<section class="categoria" data-categoria="Forros">
+<h2 class="category-title">Forros</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= SÁBANAS ================= -->
+<section class="categoria" data-categoria="Sábanas">
+<h2 class="category-title">Sábanas</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= ALFOMBRAS ================= -->
+<section class="categoria" data-categoria="Alfombras">
+<h2 class="category-title">Alfombras</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= ELECTRÓNICOS ================= -->
+<section class="categoria" data-categoria="Electrónicos">
+<h2 class="category-title">Electrónicos</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= ALMOHADAS ================= -->
+<section class="categoria" data-categoria="Almohadas">
+<h2 class="category-title">Almohadas</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= PERFUMES ================= -->
+<section class="categoria" data-categoria="Perfumes">
+<h2 class="category-title">Perfumes</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= FRAZADAS ================= -->
+<section class="categoria" data-categoria="Frazadas">
+<h2 class="category-title">Frazadas</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= TOALLAS ================= -->
+<section class="categoria" data-categoria="Toallas">
+<h2 class="category-title">Toallas</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= MOCHILAS ================= -->
+<section class="categoria" data-categoria="Mochilas">
+<h2 class="category-title">Mochilas</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= CARTERAS ================= -->
+<section class="categoria" data-categoria="Carteras">
+<h2 class="category-title">Carteras</h2>
+<div class="grid">
+
+</div>
+</section>
+
+<!-- ================= BAÑO ================= -->
+<section class="categoria" data-categoria="Baño">
+<h2 class="category-title">Baño</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= CORTINAS ================= -->
+<section class="categoria" data-categoria="Cortinas">
+<h2 class="category-title">Cortinas</h2>
+<div class="grid">
+<article class="card" data-nombre="Elegante Cortinas Combinada Lisa y Estampada Blackout" data-descripcion="Pasion Guajira, Elegante Cortinas Combinada Lisa y Estampada Blackout, medidas 54' x 88' / 137cm x 223cm, 2 paños (1 unicolor y 1 estampado)." data-precio="$16.05" data-images="img/cortinas/1.jpg,img/cortinas/2.jpg,img/cortinas/3.jpg,img/cortinas/4.jpg,img/cortinas/5.jpg,img/cortinas/6.jpg"><img onclick="abrirModal(this)" src="img/cortinas/1.jpg"><div class="card-info"><h3>Elegante Cortinas Combinada Lisa y Estampada Blackout</h3><button onclick="toggleProducto(this)">Consultar</button></div></article>
+</div>
+</section>
+
+<!-- ================= ACCESORIOS ================= -->
+<section class="categoria" data-categoria="Accesorios">
+<h2 class="category-title">Accesorios</h2>
+<div class="grid">
+</div>
+</section>
+
+<!-- ================= OTROS ================= -->
+<section class="categoria" data-categoria="Otros">
+<h2 class="category-title">Otros</h2>
+<div class="grid">
+</div>
+</section>
+
+</main>
+
+<!-- ================= MODAL IMAGEN ================= -->
+<div id="modalImagen">
+  <div class="modal-caja">
+    <button class="modal-cerrar" onclick="cerrarModal()">×</button>
+    <img id="modalImg" src="" alt="">
+    <div class="modal-cuerpo">
+      <h2 id="modalNombre"></h2>
+      <p id="modalDesc"></p>
+      <div id="modalPrecio" class="modal-precio" style="display:none"></div>
+      <button class="modal-btn" id="modalBtn" onclick="agregarDelModal()">Agregar a consulta</button>
+    </div>
+  </div>
+</div>
+
+<div class="float-wa" onclick="enviarWA()">
+  Consultar (<span id="count">0</span>)
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
